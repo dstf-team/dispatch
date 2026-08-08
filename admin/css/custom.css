@@ -1,0 +1,420 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+body {
+    background: #f1f5f9;
+    font-family: 'Inter', sans-serif;
+    color: #1e293b;
+}
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.sidebar {
+    background: linear-gradient(180deg, #111827 0%, #0f172a 100%) !important;
+    box-shadow: 4px 0 20px rgba(0,0,0,0.3);
+}
+
+.sidebar-brand {
+    height: 80px;
+    font-size: 20px;
+    font-weight: 700;
+    color: white !important;
+}
+
+.sidebar hr {
+    border-color: rgba(255,255,255,0.08);
+}
+
+.sidebar-heading {
+    color: #64748b !important;
+    font-size: 11px;
+    letter-spacing: 1px;
+    padding-left: 1rem;
+    margin-top: 10px;
+}
+
+.sidebar .nav-item {
+    margin: 4px 10px;
+}
+
+.sidebar .nav-item .nav-link {
+    color: rgba(255,255,255,0.75);
+    border-radius: 12px;
+    padding: 12px 14px;
+    transition: 0.2s;
+    font-size: 14px;
+}
+
+.sidebar .nav-item .nav-link i {
+    margin-right: 10px;
+    font-size: 15px;
+}
+
+.sidebar .nav-item .nav-link:hover {
+    background: rgba(255,255,255,0.08);
+    color: white;
+}
+
+.sidebar .nav-item.active .nav-link {
+    background: #2563eb;
+    color: white;
+    box-shadow: 0 4px 15px rgba(37,99,235,0.4);
+}
+
+/* =========================================
+   TOPBAR
+========================================= */
+
+.topbar {
+    background: #111827 !important;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.25);
+}
+
+.topbar .nav-link {
+    color: #e2e8f0 !important;
+}
+
+/* =========================================
+   SEARCH BAR
+========================================= */
+
+.navbar-search .form-control {
+    background: #1e293b !important;
+    border: 1px solid #334155 !important;
+    color: white !important;
+    border-radius: 12px;
+    height: 45px;
+}
+
+.navbar-search .form-control::placeholder {
+    color: #94a3b8;
+}
+
+.navbar-search .btn {
+    border-radius: 12px;
+    background: #2563eb;
+    border: none;
+}
+
+/* =========================================
+   CONTENT
+========================================= */
+
+#content {
+    background: #f1f5f9;
+    min-height: 100vh;
+}
+
+.container-fluid {
+    padding: 24px;
+}
+
+/* =========================================
+   CARD
+========================================= */
+
+.card {
+    background: white;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    overflow: hidden;
+}
+
+.card-body {
+    color: #1e293b;
+}
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.btn-primary {
+    background: #2563eb !important;
+    border: none !important;
+    border-radius: 12px;
+    padding: 10px 18px;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background: #1d4ed8 !important;
+}
+
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 10px;
+}
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+.card,
+.sidebar .nav-link,
+.btn {
+    transition: all 0.2s ease;
+}
+
+
+/* =========================================
+   Jumbotrn
+========================================= */
+.jumbotron {
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    border-radius: 24px;
+    padding: 50px;
+    color: white;
+    border: none;
+    box-shadow: 0 10px 30px rgba(37,99,235,0.25);
+}
+
+.jumbotron .display-4 {
+    font-weight: 700;
+}
+
+.jumbotron .lead {
+    color: rgba(255,255,255,0.85);
+}
+
+.jumbotron hr {
+    border-color: rgba(255,255,255,0.15);
+}
+
+/* =========================================
+   CONTENT TEXT ONLY
+========================================= */
+
+#content h1,
+#content h2,
+#content h3,
+#content h4,
+#content h5,
+#content h6,
+#content p,
+#content label,
+#content td,
+#content th,
+#content small,
+#content div {
+    color: #1e293b;
+}
+
+/* =========================================
+   SIDEBAR TEXT FIX
+========================================= */
+
+.sidebar .nav-link {
+    color: rgba(255,255,255,0.85) !important;
+    font-weight: 500;
+}
+
+.sidebar .nav-link span {
+    color: rgba(255,255,255,0.85) !important;
+}
+
+.sidebar .nav-link i {
+    color: rgba(255,255,255,0.9) !important;
+}
+
+.sidebar .sidebar-heading {
+    color: #94a3b8 !important;
+}
+
+.sidebar-brand-text {
+    color: white !important;
+    font-weight: 700;
+}
+
+.border-bottom a {
+    color: #2563eb !important;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.border-bottom {
+    color: #64748b;
+}
+
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+}
+
+.sidebar .nav-item.active .nav-link {
+    background: linear-gradient(135deg,#2563eb,#1d4ed8);
+    color: white !important;
+    box-shadow: 0 8px 20px rgba(37,99,235,0.35);
+}
+
+.sidebar .nav-item.active .nav-link span,
+.sidebar .nav-item.active .nav-link i {
+    color: white !important;
+}
+
+
+.table thead th {
+    background: #1e293b;
+    color: white !important;
+    border: none !important;
+}
+
+.table td {
+    background: white;
+    color: #1e293b !important;
+    vertical-align: middle !important;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background: #f8fafc;
+}
+
+.form-control {
+    background: white !important;
+    border: 1px solid #dbeafe !important;
+    color: #1e293b !important;
+    border-radius: 12px;
+    height: 45px;
+}
+
+.form-control:focus {
+    border-color: #2563eb !important;
+    box-shadow: 0 0 0 0.2rem rgba(37,99,235,0.15) !important;
+}
+
+.btn-default {
+    background: #e2e8f0;
+    border: none;
+    color: #1e293b;
+    border-radius: 12px;
+}
+
+h2 {
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #0f172a;
+}
+
+.card {
+    padding: 20px;
+}
+
+/* =========================================
+   TABLE MODERN
+========================================= */
+
+.table {
+    width: 100%;
+    background: white;
+    color: #1e293b !important;
+    border-radius: 16px;
+    overflow: hidden;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+/* HEADER */
+.table thead th,
+.table tr:first-child th {
+    background: #0f172a !important;
+    color: white !important;
+    border: none !important;
+    padding: 14px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* BODY */
+.table td {
+    background: white !important;
+    color: #1e293b !important;
+    padding: 14px;
+    border-color: #e2e8f0 !important;
+    vertical-align: middle;
+}
+
+/* STRIPED */
+.table-striped tbody tr:nth-of-type(odd) td {
+    background: #f8fafc !important;
+}
+
+/* HOVER */
+.table-hover tbody tr:hover td {
+    background: #eff6ff !important;
+    transition: 0.2s;
+}
+
+/* BORDER */
+.table-bordered td,
+.table-bordered th {
+    border: 1px solid #e2e8f0 !important;
+}
+
+/* RESPONSIVE */
+.table-responsive {
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.online {
+    color: #16a34a !important;
+    font-weight: 700;
+}
+
+.offline {
+    color: #dc2626 !important;
+    font-weight: 700;
+}
+
+/* =========================================
+   BREADCRUMB / HOME LINK
+========================================= */
+
+.border-bottom a {
+    color: #2563eb !important;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.border-bottom a:hover {
+    color: #1d4ed8 !important;
+}
+
+/* TEXT DI SAMPING HOME */
+.border-bottom {
+    color: #64748b !important;
+}
+
+/* =========================================
+   JUMBOTRON TEXT FIX
+========================================= */
+
+.jumbotron h1,
+.jumbotron p,
+.jumbotron .lead,
+.jumbotron div {
+    color: white !important;
+}
+
+.jumbotron .lead {
+    opacity: 0.9;
+}
