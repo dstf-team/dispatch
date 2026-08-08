@@ -1,0 +1,310 @@
+<?php
+session_start();
+include "koneksi.php";
+?>
+<!DOCTYPE html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+   
+
+    <title>E-BA DSTF</title>
+    <meta name="description" content="Sasha - Blogging HTML5 Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/elegent-icons.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/themes.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <script src="assets/js/modernizr-2.8.3.min.js"></script>
+
+<style>
+.card-text-limit{
+    display:-webkit-box;
+    -webkit-line-clamp:3;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+}
+.row{display:flex;flex-wrap:wrap;}
+.col-md-4,.col-sm-6,.col-12{display:block;}
+.text-justify{text-align:justify;}
+</style>
+
+</head>
+
+
+<style>
+.live-btn-fixed {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #e60000;
+    color: #fff;
+    padding: 14px 22px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: none;
+    z-index: 9999999;
+    animation: pulseLive 1.4s infinite;
+}
+
+@keyframes pulseLive {
+    0% { box-shadow: 0 0 0 0 rgba(230,0,0,.7); }
+    70% { box-shadow: 0 0 0 20px rgba(230,0,0,0); }
+    100% { box-shadow: 0 0 0 0 rgba(230,0,0,0); }
+}
+
+.manpower-btn-fixed {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;   /* kiri */
+    background: linear-gradient(135deg,#1f4fbf,#163f99);
+    color: #fff;
+    padding: 14px 22px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: none;
+    z-index: 9999999;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    animation: pulseManpower 1.4s infinite;
+}
+
+@keyframes pulseManpower {
+    0% { box-shadow: 0 0 0 0 rgba(31,79,191,.7); }
+    70% { box-shadow: 0 0 0 20px rgba(31,79,191,0); }
+    100% { box-shadow: 0 0 0 0 rgba(31,79,191,0); }
+}
+</style>
+
+<body>
+
+<div class="overlay-wrapper">
+
+<header class="masthead">
+
+    <div class="header-top">
+        <div class="container">
+
+            <a class="navbar-brand hidden-xs" href="./">
+                <img src="assets/webb-02.png" alt="Site Logo">
+            </a>
+
+            <div class="menu-search">
+                <div class="form-trigger"><i class="icon_search"></i></div>
+                <form action="index.php" method="GET">
+                    <input type="text" name="search" id="menu-search" placeholder="Search here..">
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="header-bottom">
+        <div class="container">
+
+            <nav class="navbar navbar-default">
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed"
+                        data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand visible-xs" href="./">
+                        <img src="assets/webbenny1.png" alt="Site Logo">
+                    </a>
+                </div>
+
+                <div id="main-menu" class="collapse navbar-collapse">
+
+<ul class="nav navbar-nav">
+
+    <li class="menu-item"><a href="index.php">Home</a></li>
+    <li class="menu-item"><a href="?module=earthwork">Earthwork</a></li>
+    <li class="menu-item"><a href="?module=geotech">Geotech</a></li>
+    <li class="menu-item"><a href="?module=hidro">Hidrologi</a></li>
+    <li class="menu-item"><a href="?module=ipal">Waste Water Treatment</a></li>
+    <li class="menu-item"><a href="?module=plan">Planner & Survey</a></li>
+
+    <?php if(isset($_SESSION['user'])){ 
+
+        // proses tampilan nama user
+        $displayName = trim($_SESSION['user']);
+        $parts = explode(" ", $displayName);
+        $displayName = implode(" ", array_slice($parts,0,2));
+        $displayName = ucwords(strtolower($displayName));
+    ?>
+
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            👤 <?php echo htmlspecialchars($displayName); ?>
+            <span class="caret"></span>
+        </a>
+
+        <ul class="dropdown-menu">
+            <li><a href="admin/index.php">Dashboard User</a></li>
+            <li><a href="admin/logout.php">Logout</a></li>
+        </ul>
+    </li>
+
+    <?php } else { ?>
+
+    <li class="menu-item">
+        <a href="admin/login.php">Login</a>
+    </li>
+
+    <?php } ?>
+
+</ul>
+
+                </div>
+            </nav>
+
+        </div>
+    </div>
+
+</header>
+
+
+<section class="main-content">
+    <div class="padding">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-8">
+                    <div class="default-posts-left">
+                        <main class="container-fluid" id="content-main">
+                            <?php include 'main.php'; ?>
+                        </main>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+
+                    <aside class="sidebar text-justify">
+                        <div class="widget">
+                            <h3 class="widget-title">Laporan Terkini</h3>
+
+                            <div class="widget-details">
+
+<main role="main">
+<?php
+$sebelum = mysqli_query($koneksi,
+"SELECT * FROM berita ORDER BY id_berita DESC LIMIT 10");
+
+while($s = mysqli_fetch_array($sebelum)){
+    echo "<p><a href='?module=detailberita&id=$s[id_berita]'>$s[judul]</a></p>";
+}
+?>
+</main>
+
+                            </div>
+                        </div>
+                    </aside>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<footer class="site-footer colophon">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-3"></div>
+
+            <div class="col-sm-6">
+                <div class="copyright text-center">
+                    Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script>
+                    dstfproject
+                </div>
+            </div>
+
+            <div class="col-sm-3">
+                <div class="footer-social pull-right"></div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+</div>
+
+<script src="assets/js/plugins.js"></script>
+<script src="assets/js/main.js"></script>
+
+
+<script>
+(function(){
+
+  let currentURL = window.location.href;
+
+  function refreshContent() {
+    fetch(currentURL, { cache: 'no-store' })
+      .then(res => res.text())
+      .then(html => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+
+        // GANTI HANYA ISI MAIN CONTENT
+        const newContent = doc.querySelector('.default-posts-left');
+        const oldContent = document.querySelector('.default-posts-left');
+
+        if (newContent && oldContent) {
+          oldContent.innerHTML = newContent.innerHTML;
+        }
+      });
+  }
+
+  setInterval(refreshContent, 20000); // 20 dm
+
+})();
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    // CEGAH DOUBLE BUTTON
+    if (document.getElementById("liveDisplayBtn")) return;
+
+    const btn = document.createElement("a");
+    btn.id = "liveDisplayBtn";
+    btn.href = "slide.php";
+    btn.target = "_blank";
+    btn.className = "live-btn-fixed";
+    btn.innerHTML = "🔴 LIVE DISPLAY";
+
+    document.body.appendChild(btn);
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    // CEGAH DOUBLE BUTTON
+    if (document.getElementById("manpowerBtn")) return;
+
+    const btn = document.createElement("a");
+    btn.id = "manpowerBtn";
+    btn.href = "manpower.php"; // ganti jika perlu
+    btn.target = "_blank";
+    btn.className = "manpower-btn-fixed";
+    btn.innerHTML = "👷 MANPOWER";
+
+    document.body.appendChild(btn);
+});
+</script>
+
+</body>
+</html>
